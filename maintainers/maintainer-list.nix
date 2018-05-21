@@ -1523,6 +1523,11 @@
     github = "gnidorah";
     name = "Alex Ivanov";
   };
+  goertzenator = {
+    email = "daniel.goertzen@gmail.com";
+    github = "goertzenator";
+    name = "Daniel Goertzen";
+  };
   goibhniu = {
     email = "cillian.deroiste@gmail.com";
     github = "cillianderoiste";
