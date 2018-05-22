@@ -29,12 +29,14 @@ in
       #!${stdenv.shell}
       [ "\$1" == "" ] && echo 'Must specify data directory ("." is acceptable).' && exit 1
       cd "\$1"
-      [ ! -d Configs ] && cp -r --no-preserve=ownership,mode,xattr $out/server/Configs ./ && chmod -R 664 Configs
-      [ ! -d WebClient ] && cp -r --no-preserve=ownership,mode,xattr $out/server/WebClient ./ && chmod -R 664 WebClient
-      [ ! -d Mods ] && cp -r --no-preserve=ownership,mode,xattr $out/server/Mods ./ && chmod -R 664 Mods
-      [ ! -d doc ] && cp -r --no-preserve=ownership,mode,xattr $out/server/doc ./ && chmod -R 664 doc
+      [ ! -d Configs ] && cp -r --no-preserve=ownership,mode,xattr $out/server/Configs ./ && chmod -R 775 Configs
+      [ ! -d WebClient ] && cp -r --no-preserve=ownership,mode,xattr $out/server/WebClient ./ && chmod -R 775 WebClient
+      [ ! -d Mods ] && cp -r --no-preserve=ownership,mode,xattr $out/server/Mods ./ && chmod -R 775 Mods
+      [ ! -d doc ] && cp -r --no-preserve=ownership,mode,xattr $out/server/doc ./ && chmod -R 775 doc
+      cp $out/server/EcoServer.exe ./ && chmod 775 EcoServer.exe
 
-      exec ${mono}/bin/mono $out/server/EcoServer.exe -nogui
+      exec ${mono}/bin/mono EcoServer.exe -nogui
+      # exec ${mono}/bin/mono $out/server/EcoServer.exe -nogui
       EOF
 
       chmod +x $out/bin/EcoServer
