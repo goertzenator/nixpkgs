@@ -22,9 +22,6 @@ in
 
       mkdir -p $out/bin
 
-      #!${stdenv.shell}
-      [ "$1" != "" ] && echo 'Must specify data directory ("." is acceptable).' && exit 1
-
       cat <<EOF >$out/bin/EcoServer
       #!${stdenv.shell}
       [ "\$1" == "" ] && echo 'Must specify data directory ("." is acceptable).' && exit 1
