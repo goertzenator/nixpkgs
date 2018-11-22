@@ -432,7 +432,7 @@ let
 
       VFIO_PCI_VGA = when stdenv.is64bit yes;
 
-    } // optionalAttrs (stdenv.isx86_64 || stdenv.isi686) ({
+    } // optionalAttrs stdenv.isx86 ({
       XEN = option yes;
 
       # XXX: why isn't this in the xen-dom0 conditional section below?
