@@ -93,6 +93,7 @@ let
     '' +
     ''
       mkdir -p $bin
+      substituteInPlace $out/bin/c_rehash --replace ${buildPackages.perl} ${perl}
       mv $out/bin $bin/
 
       mkdir $dev
