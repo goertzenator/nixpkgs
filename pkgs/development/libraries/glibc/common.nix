@@ -209,7 +209,7 @@ stdenv.mkDerivation ({
 // lib.optionalAttrs (stdenv.hostPlatform != stdenv.buildPlatform) {
   preInstall = null; # clobber the native hook
 
-  dontStrip = true;
+  # dontStrip = true;
 
   separateDebugInfo = false; # this is currently broken for crossDrv
 
