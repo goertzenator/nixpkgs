@@ -16409,6 +16409,8 @@ in
 
   oidentd = callPackage ../servers/identd/oidentd { };
 
+  omadad = callPackage ../servers/omadad { };
+
   openfire = callPackage ../servers/xmpp/openfire { };
 
   oracleXE = callPackage ../servers/sql/oracle-xe { };
